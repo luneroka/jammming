@@ -25,7 +25,7 @@ function Track(props) {
       );
     }
     return (
-      <button className='track-action' onClick={removeTrack}>
+      <button className='track-action' onClick={addTrack}>
         +
       </button>
     );
