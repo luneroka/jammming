@@ -1,4 +1,5 @@
 import TrackList from './TrackList';
+import '../css/SearchResults.css';
 
 function SearchResults(props) {
   return (

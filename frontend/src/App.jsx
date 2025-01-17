@@ -1,4 +1,4 @@
-import './App.css';
+import './css/App.css';
 import SearchResults from './components/SearchResults';
 import SearchBar from './components/SearchBar';
 import Playlist from './components/Playlist';
@@ -18,14 +18,21 @@ function App() {
   ]);
 
   return (
-    <>
-      <h1>Jammming</h1>
+    <div>
+      <h1>
+        Ja<span className='highlight'>mmm</span>ing
+      </h1>
       <div className='app'>
         <SearchBar />
-        <SearchResults searchResults={searchResults} />
-        <Playlist playlistName={playlistName} playlistTracks={playlistTracks} />
+        <div className='app-playlist'>
+          <SearchResults searchResults={searchResults} />
+          <Playlist
+            playlistName={playlistName}
+            playlistTracks={playlistTracks}
+          />
+        </div>
       </div>
-    </>
+    </div>
   );
 }
 

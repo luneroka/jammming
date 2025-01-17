@@ -1,3 +1,5 @@
+import '../css/Track.css';
+
 function Track(props) {
   function onAddClick() {
     alert('clicked');
@@ -5,11 +7,13 @@ function Track(props) {
 
   return (
     <div className='track'>
-      <h3>{props.track.name}</h3>
-      <p>
-        {props.track.artist} | {props.track.album}
-      </p>
-      <button className='add-btn' onClick={onAddClick}>
+      <div className='track-information'>
+        <h3>{props.track.name}</h3>
+        <p>
+          {props.track.artist} | {props.track.album}
+        </p>
+      </div>
+      <button className='track-action' onClick={onAddClick}>
         +
       </button>
     </div>

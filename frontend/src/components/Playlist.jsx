@@ -1,4 +1,5 @@
 import TrackList from './TrackList';
+import '../css/PlayList.css';
 
 function Playlist(props) {
   return (
