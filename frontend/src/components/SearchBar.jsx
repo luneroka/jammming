@@ -10,6 +10,8 @@ function SearchBar() {
     setSearchQuery('');
   };
 
+  const searchSong = () => {};
+
   return (
     <form onSubmit={handleSearch} className='search-form'>
       <input
@@ -19,7 +21,7 @@ function SearchBar() {
         value={searchQuery}
         onChange={(e) => setSearchQuery(e.target.value)}
       />
-      <button type='submit' className='search-btn'>
+      <button type='submit' className='search-btn' onClick={searchSong}>
         Search
       </button>
     </form>
