@@ -2,7 +2,7 @@ import './css/App.css';
 import SearchResults from './components/SearchResults';
 import SearchBar from './components/SearchBar';
 import Playlist from './components/Playlist';
-import { useState } from 'react';
+import { useCallback, useState } from 'react';
 
 function App() {
   const [searchResults, setSearchResults] = useState([
@@ -29,6 +29,14 @@ function App() {
     { name: 'Daddy Cool', album: 'The Very Best Of', artist: 'Boney M' },
   ]);
 
+  const addTrack = useCallback(
+    (track) => {
+      if (playlistTracks.some((savedTrack) => savedTrack === track.id)) return;
+      setPlaylistTracks((prevTracks) => [...prevTracks, track]);
+    },
+    [playlistTracks]
+  );
+
   return (
     <div>
       <h1>
@@ -37,7 +45,7 @@ function App() {
       <div className='app'>
         <SearchBar />
         <div className='app-playlist'>
-          <SearchResults searchResults={searchResults} />
+          <SearchResults searchResults={searchResults} onAdd={addTrack}/>
           <Playlist
             playlistName={playlistName}
             playlistTracks={playlistTracks}
