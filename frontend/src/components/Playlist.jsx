@@ -1,10 +1,18 @@
 import TrackList from './TrackList';
 import '../css/PlayList.css';
+import { useCallback } from 'react';
 
 function Playlist(props) {
+  const handleNameChange = useCallback(
+    (event) => {
+      props.onNameChange(event.target.value);
+    },
+    [props.onNameChange]
+  );
+
   return (
     <div className='playlist'>
-      <h2>{props.playlistName}</h2>
+      <input onChange={handleNameChange} defaultValue={'New Playlist'} />
       <TrackList tracks={props.playlistTracks} onRemove={props.onRemove} />
       <button className='save-btn'>SAVE TO SPOTIFY</button>
     </div>
