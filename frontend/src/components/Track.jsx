@@ -5,7 +5,7 @@ function Track(props) {
 
   return (
     <div className='track'>
-      <h3>{props.track.title}</h3>
+      <h3>{props.track.name}</h3>
       <p>
         {props.track.artist} | {props.track.album}
       </p>
