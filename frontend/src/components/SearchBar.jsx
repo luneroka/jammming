@@ -4,7 +4,11 @@ import { useState } from 'react';
 function SearchBar() {
   const [searchQuery, setSearchQuery] = useState('');
 
-  const handleSearch = () => {};
+  const handleSearch = (e) => {
+    e.preventDefault;
+    alert(searchQuery);
+    setSearchQuery('');
+  };
 
   return (
     <form onSubmit={handleSearch} className='search-form'>
