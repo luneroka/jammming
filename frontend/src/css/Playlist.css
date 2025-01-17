@@ -6,8 +6,12 @@
   width: 37%;
   max-height: 950px;
   padding: 2.27rem 1.16rem;
-  background-color: rgba(1, 12, 63, 0.7);
+  background-color: rgba(16, 110, 81, 0.9);
   box-shadow: 0 4px 2px 2px #000000;
+}
+
+.playlist h2 {
+  font-weight: bold;
 }
 
 .playlist input {
@@ -28,16 +32,16 @@
   border-radius: 54px;
   border-width: 0px;
   margin-top: 1.27rem;
-  background-color: #6c41ec;
+  background-color: #36852B;
   text-align: center;
   font-size: 0.83rem;
   transition: background-color 0.25s;
   color: #fff;
-  font-weight: 500;
+  font-weight: bold;
 }
 
 .save-btn:hover {
-  background-color: rgba(108, 65, 233, 0.7);
+  background-color: #B4D262
 }
 
 ::-webkit-scrollbar {

@@ -9,11 +9,23 @@ function App() {
     { name: 'Rasputin', album: 'The Very Best Of', artist: 'Boney M' },
     { name: 'Sunny', album: 'The Very Best Of', artist: 'Boney M' },
     { name: 'Daddy Cool', album: 'The Very Best Of', artist: 'Boney M' },
+    { name: 'Daddy Cool', album: 'The Very Best Of', artist: 'Boney M' },
+    { name: 'Daddy Cool', album: 'The Very Best Of', artist: 'Boney M' },
+    { name: 'Daddy Cool', album: 'The Very Best Of', artist: 'Boney M' },
+    { name: 'Daddy Cool', album: 'The Very Best Of', artist: 'Boney M' },
+    { name: 'Daddy Cool', album: 'The Very Best Of', artist: 'Boney M' },
+    { name: 'Daddy Cool', album: 'The Very Best Of', artist: 'Boney M' },
+    { name: 'Daddy Cool', album: 'The Very Best Of', artist: 'Boney M' },
+    { name: 'Daddy Cool', album: 'The Very Best Of', artist: 'Boney M' },
+    { name: 'Daddy Cool', album: 'The Very Best Of', artist: 'Boney M' },
   ]);
   const [playlistName, setPlaylistName] = useState('MyPlaylist');
   const [playlistTracks, setPlaylistTracks] = useState([
     { name: 'Rasputin', album: 'The Very Best Of', artist: 'Boney M' },
     { name: 'Sunny', album: 'The Very Best Of', artist: 'Boney M' },
+    { name: 'Daddy Cool', album: 'The Very Best Of', artist: 'Boney M' },
+    { name: 'Daddy Cool', album: 'The Very Best Of', artist: 'Boney M' },
+    { name: 'Daddy Cool', album: 'The Very Best Of', artist: 'Boney M' },
     { name: 'Daddy Cool', album: 'The Very Best Of', artist: 'Boney M' },
   ]);
 
