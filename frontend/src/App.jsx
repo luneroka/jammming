@@ -2,6 +2,7 @@ import './css/App.css';
 import SearchResults from './components/SearchResults';
 import SearchBar from './components/SearchBar';
 import Playlist from './components/Playlist';
+import Spotify from './services/Spotify';
 import { useCallback, useState } from 'react';
 
 function App() {
