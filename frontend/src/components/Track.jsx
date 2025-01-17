@@ -16,6 +16,21 @@ function Track(props) {
     [props.onRemove, props.track]
   );
 
+  const renderAction = () => {
+    if (props.isRemoval) {
+      return (
+        <button className='track-action' onClick={removeTrack}>
+          -
+        </button>
+      );
+    }
+    return (
+      <button className='track-action' onClick={removeTrack}>
+        +
+      </button>
+    );
+  };
+
   return (
     <div className='track'>
       <div className='track-information'>
@@ -24,7 +39,7 @@ function Track(props) {
           {props.track.artist} | {props.track.album}
         </p>
       </div>
-      <button className='track-action'>+</button>
+      {renderAction()}
     </div>
   );
 }
