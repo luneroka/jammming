@@ -1,5 +1,6 @@
 import './App.css';
 import SearchResults from './components/SearchResults';
+import SearchBar from './components/SearchBar';
 
 const searchResults = [
   { title: 'Rasputin', album: 'The Very Best Of', artist: 'Boney M' },
@@ -8,9 +9,12 @@ const searchResults = [
 ];
 
 function App() {
-  return <>
-    <SearchResults searchResults={searchResults}/>
-  </>;
+  return (
+    <>
+      <SearchBar />
+      <SearchResults searchResults={searchResults} />
+    </>
+  );
 }
 
 export default App;
