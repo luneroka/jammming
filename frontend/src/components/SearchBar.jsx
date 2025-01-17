@@ -1,4 +1,9 @@
+import SearchResults from './SearchResults';
+import { useState } from 'react';
+
 function SearchBar() {
+  const [searchQuery, setSearchQuery] = useState('');
+
   const handleSearch = () => {};
 
   return (
@@ -7,6 +12,8 @@ function SearchBar() {
         type='text'
         placeholder='Search for song, album or artist...'
         className='search-input'
+        value={searchQuery}
+        onChange={(e) => setSearchQuery(e.target.value)}
       />
       <button type='submit' className='search-btn'>
         Search
