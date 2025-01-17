@@ -1,13 +1,13 @@
-function Track({ track }) {
+function Track(props) {
   function onAddClick() {
     alert('clicked');
   }
 
   return (
     <div className='track'>
-      <h3>{track.title}</h3>
+      <h3>{props.track.title}</h3>
       <p>
-        {track.artist} | {track.album}
+        {props.track.artist} | {props.track.album}
       </p>
       <button className='add-btn' onClick={onAddClick}>
         +
