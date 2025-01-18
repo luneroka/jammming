@@ -6,94 +6,13 @@ import Spotify from './services/Spotify';
 import { useCallback, useState } from 'react';
 
 function App() {
-  const [searchResults, setSearchResults] = useState([
-    {
-      id: 1,
-      name: 'Rasputin',
-      album: 'The Very Best Of',
-      artist: 'Boney M',
-      uri: 'spotify:album:1234',
-    },
-    {
-      id: 3,
-      name: 'Sunny',
-      album: 'The Very Best Of',
-      artist: 'Boney M',
-      uri: 'spotify:album:5678',
-    },
-    {
-      id: 4,
-      name: 'Daddy Cool',
-      album: 'The Very Best Of',
-      artist: 'Boney M',
-      uri: 'spotify:album:91011',
-    },
-    {
-      id: 5,
-      name: 'Daddy Cool',
-      album: 'The Very Best Of',
-      artist: 'Boney M',
-      uri: 'spotify:album:1213',
-    },
-    {
-      id: 6,
-      name: 'Daddy Cool',
-      album: 'The Very Best Of',
-      artist: 'Boney M',
-      uri: 'spotify:album:1415',
-    },
-    {
-      id: 7,
-      name: 'Daddy Cool',
-      album: 'The Very Best Of',
-      artist: 'Boney M',
-      uri: 'spotify:album:1617',
-    },
-    {
-      id: 8,
-      name: 'Daddy Cool',
-      album: 'The Very Best Of',
-      artist: 'Boney M',
-      uri: 'spotify:album:1819',
-    },
-    {
-      id: 9,
-      name: 'Daddy Cool',
-      album: 'The Very Best Of',
-      artist: 'Boney M',
-      uri: 'spotify:album:2021',
-    },
-    {
-      id: 10,
-      name: 'Daddy Cool',
-      album: 'The Very Best Of',
-      artist: 'Boney M',
-      uri: 'spotify:album:2223',
-    },
-    {
-      id: 11,
-      name: 'Daddy Cool',
-      album: 'The Very Best Of',
-      artist: 'Boney M',
-      uri: 'spotify:album:2425',
-    },
-    {
-      id: 12,
-      name: 'Daddy Cool',
-      album: 'The Very Best Of',
-      artist: 'Boney M',
-      uri: 'spotify:album:2627',
-    },
-    {
-      id: 13,
-      name: 'Daddy Cool',
-      album: 'The Very Best Of',
-      artist: 'Boney M',
-      uri: 'spotify:album:2829',
-    },
-  ]);
+  const [searchResults, setSearchResults] = useState([]);
   const [playlistName, setPlaylistName] = useState('MyPlaylist');
   const [playlistTracks, setPlaylistTracks] = useState([]);
+
+  const search = useCallback((term) => {
+    Spotify.search(term).then(setSearchResults);
+  }, []);
 
   const addTrack = useCallback(
     (track) => {
@@ -127,7 +46,7 @@ function App() {
         Ja<span className='highlight'>mmm</span>ing
       </h1>
       <div className='app'>
-        <SearchBar />
+        <SearchBar onSearch={search} />
         <div className='app-playlist'>
           <SearchResults searchResults={searchResults} onAdd={addTrack} />
           <Playlist
