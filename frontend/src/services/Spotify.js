@@ -24,6 +24,10 @@ const Spotify = {
 
   search(term) {
     const accessToken = Spotify.getAccessToken();
+    if (!accessToken) {
+      throw new Error('Access token not found');
+    }
+
     return fetch(`https://api.spotify.com/v1/search?type=track&q=${term}`, {
       headers: {
         Authorization: `Bearer ${accessToken}`,
@@ -52,6 +56,9 @@ const Spotify = {
     }
 
     const accessToken = Spotify.getAccessToken();
+    if (!accessToken) {
+      throw new Error('Access token is not available');
+    }
     const headers = { Authorization: `Bearer ${accessToken}` };
     let userId;
 
@@ -79,5 +86,9 @@ const Spotify = {
       });
   },
 };
+
+window.addEventListener('load', () => {
+  Spotify.getAccessToken();
+});
 
 export default Spotify;
