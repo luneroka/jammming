@@ -1,7 +1,7 @@
 import Track from './Track';
 import '../css/TrackList.css';
 
-function TrackList({ tracks = [] }) {
+function TrackList({ tracks = [], onAdd, isRemoval, onRemove }) {
   return (
     <div className='track-list'>
       {tracks.map((track) => {
@@ -9,9 +9,9 @@ function TrackList({ tracks = [] }) {
           <Track
             track={track}
             key={track.id}
-            onAdd={props.onAdd}
-            isRemoval={props.isRemoval}
-            onRemove={props.onRemove}
+            onAdd={onAdd}
+            isRemoval={isRemoval}
+            onRemove={onRemove}
           />
         );
       })}
