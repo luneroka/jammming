@@ -1,11 +1,22 @@
 import React from 'react';
-import { render, screen } from '@testing-library/react';
 import SearchResults from './SearchResults';
-import { describe, it, expect } from 'vitest';
+import TrackList from './TrackList';
+import { describe, it, expect, vi, afterEach } from 'vitest';
+import { render, screen, cleanup } from '@testing-library/react';
 import '@testing-library/jest-dom/vitest';
 
+vi.mock('./TrackList', () => ({
+  __esModule: true,
+  default: vi.fn(() => <div>Mocked TrackList</div>),
+}));
+
+// Clean up after each test
+afterEach(() => {
+  cleanup();
+});
+
 describe('SearchResults', () => {
-  it('renders search results into <TrackList /> component.', () => {
+  it('renders the heading and TrackList component.', () => {
     const mockTracks = [
       {
         id: 1,
@@ -14,23 +25,34 @@ describe('SearchResults', () => {
         album: 'Album 1',
         uri: 'Track1uri',
       },
-      {
-        id: 2,
-        name: 'Track 2',
-        artist: 'Artist 2',
-        album: 'Album 2',
-        uri: 'Track2uri',
-      },
-      {
-        id: 3,
-        name: 'Track 3',
-        artist: 'Artist 3',
-        album: 'Album 3',
-        uri: 'Track3uri',
-      },
     ];
+    const mockOnAdd = vi.fn();
 
-    render(<SearchResults tracks={mockTracks} />);
+    render(<SearchResults searchResults={mockTracks} onAdd={mockOnAdd} />);
+
+    // Check that the heading is still rendered
     expect(screen.getByText('Results')).toBeInTheDocument();
+
+    // Ensure TrackList was called with the correct props
+    expect(TrackList).toHaveBeenCalledWith(
+      { tracks: mockTracks, onAdd: mockOnAdd },
+      {}
+    );
+  });
+
+  it('renders correctly with no search results', () => {
+    render(<SearchResults searchResults={[]} onAdd={() => {}} />);
+
+    // Check that the heading is still rendered
+    expect(screen.getByText('Results')).toBeInTheDocument();
+
+    // Check that TrackList is rendered, even if empty
+    expect(screen.getByText('Mocked TrackList')).toBeInTheDocument();
+
+    // Ensure TrackList was called with an empty array
+    expect(TrackList).toHaveBeenCalledWith(
+      { tracks: [], onAdd: expect.any(Function) },
+      {}
+    );
   });
 });
