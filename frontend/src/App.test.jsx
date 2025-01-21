@@ -5,27 +5,9 @@ import '@testing-library/jest-dom/vitest';
 import App from './App';
 import * as Spotify from './services/Spotify';
 
-vi.mock('./services/Spotify', async (importOriginal) => {
-  const actual = await importOriginal();
-  return {
-    ...actual,
-    search: vi.fn(),
-    savePlaylist: vi.fn(),
-    getAccessToken: vi.fn(() => 'mockAccessToken'),
-  };
-});
-
-// Mock fetch
-global.fetch = vi.fn(() =>
-  Promise.resolve({
-    json: () => Promise.resolve({ tracks: { items: [] } }),
-  })
-);
-
 // Clean up after each test
 afterEach(() => {
   cleanup();
-  vi.clearAllMocks();
 });
 
 describe('App', () => {
