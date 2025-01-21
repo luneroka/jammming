@@ -1,6 +1,6 @@
 import React from 'react';
 import SearchResults from './SearchResults';
-import TrackList from './TrackList';
+import TrackList from '../TrackList/TrackList';
 import { describe, it, expect, vi, afterEach } from 'vitest';
 import { render, screen, cleanup } from '@testing-library/react';
 import '@testing-library/jest-dom/vitest';

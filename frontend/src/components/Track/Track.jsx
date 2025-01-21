@@ -1,5 +1,5 @@
 import { useCallback } from 'react';
-import '../css/Track.css';
+import './Track.css';
 
 function Track({ track = {}, onAdd, onRemove, isRemoval }) {
   const addTrack = useCallback(

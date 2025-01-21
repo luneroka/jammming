@@ -1,5 +1,5 @@
-import TrackList from './TrackList';
-import '../css/SearchResults.css';
+import TrackList from '../TrackList/TrackList';
+import './SearchResults.css';
 
 function SearchResults({ searchResults = [], onAdd }) {
   return (

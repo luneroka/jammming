@@ -1,4 +1,4 @@
-import '../css/SearchBar.css';
+import './SearchBar.css';
 import { useState, useCallback } from 'react';
 
 function SearchBar({ onSearch }) {

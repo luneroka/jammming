@@ -1,5 +1,5 @@
-import TrackList from './TrackList';
-import '../css/PlayList.css';
+import TrackList from '../TrackList/TrackList';
+import './PlayList.css';
 import { useCallback } from 'react';
 
 function Playlist({ onNameChange, playlistTracks, onRemove, onSave }) {

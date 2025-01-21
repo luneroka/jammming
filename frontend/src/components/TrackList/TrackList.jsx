@@ -1,5 +1,5 @@
-import Track from './Track';
-import '../css/TrackList.css';
+import Track from '../Track/Track';
+import './TrackList.css';
 
 function TrackList({ tracks = [], onAdd, isRemoval, onRemove }) {
   return (
