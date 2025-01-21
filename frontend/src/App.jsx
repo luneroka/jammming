@@ -7,7 +7,7 @@ import { useCallback, useState } from 'react';
 
 function App() {
   const [searchResults, setSearchResults] = useState([]);
-  const [playlistName, setPlaylistName] = useState('MyPlaylist');
+  const [playlistName, setPlaylistName] = useState('New Playlist');
   const [playlistTracks, setPlaylistTracks] = useState([]);
 
   const search = useCallback((term) => {
