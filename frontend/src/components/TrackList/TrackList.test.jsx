@@ -5,7 +5,7 @@ import { describe, it, expect, vi, afterEach } from 'vitest';
 import { render, screen, cleanup } from '@testing-library/react';
 import '@testing-library/jest-dom/vitest';
 
-vi.mock('./Track', () => ({
+vi.mock('../Track/Track', () => ({
   _esModule: true,
   default: vi.fn(() => <div>Mocked Track</div>),
 }));
